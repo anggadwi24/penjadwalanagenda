@@ -12,8 +12,8 @@
             .demo-gallery > ul > li {
                 
                 margin-bottom: 0;
-                margin-right: 20px;
-                width: 200px;
+                margin-right: 25px;
+                width: 260px;
 
                 display: inline-block;
             }

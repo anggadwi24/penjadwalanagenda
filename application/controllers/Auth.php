@@ -24,6 +24,11 @@ class Auth extends CI_Controller
 					if(sha1($pwd) == $row['users_password']){
 						$data = array('id'=>$row['users_id'],'username'=>$row['users_username'],'pegawai'=>$row['users_pegawai_id'],'role'=>$row['users_role']);
 						$this->session->set_userdata('isLog',$data);
+						if ($this->session->userdata['isLog']['role'] != 'camat') {
+						$this->session->set_flashdata('modal',true);
+						}else{
+							$this->session->set_flashdata('modal',false);
+						}
 						redirect('');
 					}else{
 						$this->session->set_flashdata('erorr',json_encode('Passowrd salah'));

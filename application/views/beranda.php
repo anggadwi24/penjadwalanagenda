@@ -3,6 +3,13 @@
         color: white;
     }
 </style>
+
+<?php 
+    $user = $this->model_app->join_where2('users','pegawai','users_pegawai_id','pegawai_id',array('users_id'=>$this->session->userdata['isLog']['id']))->row_array();
+    // $cekagenda = $this->model_app->view_where('agenda_pegawai',array('ap_pegawai_id'=>$user['pegawai_id']));
+$cekagenda = $this->db->query('select * from  agenda a JOIN agenda_pegawai b ON a.agenda_id = b.ap_agenda_id  where agenda_date_start BETWEEN "'.date('Y-m-d 00:00:00',strtotime('monday this week')).'" AND "'.date('Y-m-d 23:59:59',strtotime('sunday this week')).'" AND ap_pegawai_id = "'.$user['pegawai_id'].'" ');
+?>
+
 <div class="row">
     <div class="col-sm-12">
         <div class="page-title-box">
@@ -11,6 +18,49 @@
         </div>
     </div>
 </div>
+
+
+ <!-- sample modal content -->
+<div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" >
+         <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">Informasi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                
+                    <div class="col-12 table-responsive">
+                        <h5>Selamat Datang <?= $user['pegawai_name'] ?></h5>
+                        <p>Berikut jadwal agenda milik anda</p><br>
+                         <table id="datatable1" class="table dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                            <thead>
+                            <tr>
+                                <th>Agenda</th>
+                                <th>Tanggal</th>
+                                <th>Lokasi</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach($cekagenda->result_array() as $row){
+
+                                // $row = $this->model_app->view_where('agenda',array('agenda_id'=>$cgd['ap_agenda_id']))->row_array();
+                                ?>
+                                <tr>
+                                    <td><?= $row['agenda_name'] ?></td>
+                                    <td><?= date('d/m/Y H:i',strtotime($row['agenda_date_start'])) ?> s/d <?= date('d/m/Y H:i',strtotime($row['agenda_date_end'])) ?> WITA</td>
+                                    <td><?= $row['agenda_place'] ?></td>
+                                </tr>
+                                <?php } ?>                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <!-- end page title end breadcrumb -->
 <div class="row">
     <div class="col-lg-12">
@@ -123,18 +173,29 @@
                 </div>
             </div>           
         <?php }?>
-        <div class="card">
+        <div class="col-12 my-2">
+            <div class="card">
             <div class="card-body">
                 
                 <h5 class="header-title mb-4 mt-0">Calendar</h5>
                 <div id='calendar'></div>
             </div>
-        </div>                                    
+        </div>  
+        </div>
+                                          
     </div>                             
 </div>
 <!-- end row -->
 
+<script type="text/javascript">
+        $(document).ready(function(){
+            if (<?= $this->session->flashdata('modal')?>==true) {
+             $('#myModal').modal('show');
+            }else{}
+        });
+    </script>
 <script>
+
     var baseUrl='<?= base_url('main/') ?>';
     data();
     function data(){

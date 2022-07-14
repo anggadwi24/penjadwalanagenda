@@ -29,7 +29,7 @@ class Main extends CI_Controller
 				$status = true;
 			}else if($this->role == 'pegawai'){
 				$status = true;
-				$data = $this->db->query("SELECT * FROM agenda WHERE agenda_validasi = 'y' AND agenda_validasi_by IS NOT NULL ");
+				$data = $this->db->query("SELECT * FROM agenda WHERE agenda_validasi = 'y' AND agenda_validasi_by IS NOT NULL AND agenda_status != 'ditolak' ");
 			}else{
 				$status = false;
 				$msg = 'Please re-login';
