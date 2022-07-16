@@ -128,7 +128,8 @@
                 <!-- LOGO -->
                 <div class="topbar-left" >
                     <div class="text-center bg-logo" style="height:70px;">
-                        <a href="<?= base_url('') ?>" class="logo"><i class="mdi mdi-bowling text-success"></i> KUTA SELATAN</a>
+                        <a href="<?= base_url('') ?>" class="logo"><i class="mdi mdi-bowling text-success"></i> PENJADWALAN AGENDA KEGIATAN 
+                        </a>
                         <!-- <a href="index.html" class="logo"><img src="<?= base_url() ?>assets/images/logo.png" height="24" alt="logo"></a> -->
                     </div>
                 </div>
@@ -171,7 +172,7 @@
                                 </a>
                             </li>
                          
-                            <?php if($user['users_role'] == 'admin' OR $user['users_role'] == 'camat'){?>
+                        
                             <li>
                                 <a href="<?= base_url('pegawai') ?>" class="waves-effect">
                                     <i class="dripicons-user"></i>
@@ -190,7 +191,7 @@
                                 </a>
                             </li>
                             <?php }?>
-                            <?php }?>
+                         
 
                         </ul>
                     </div>

@@ -225,7 +225,7 @@
                                     <td><?= $pj['pegawai_name']?></td>
                                 </tr>
                                 <tr class="table-secondary">
-                                    <th>Staff yang Menghadiri</th>
+                                    <th>Peserta yang Menghadiri</th>
                                     <td>:</td>
                                     <td><?=  $stf ?></td>
                                 </tr>
@@ -384,7 +384,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Batal</button>
                 <input type="hidden" name="id" value="<?= $row['hk_id']?>">
                 <button class="btn btn-primary waves-effect waves-light">Simpan</button>
             </div>
@@ -450,7 +450,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Batal</button>
                 <input type="hidden" name="id" value="<?= $row['hk_id']?>">
                 <button class="btn btn-primary waves-effect waves-light">Simpan</button>
             </div>

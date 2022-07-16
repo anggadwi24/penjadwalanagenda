@@ -162,7 +162,7 @@
                     </div>                                                
                 </div>
                 <div class="form-group float-right">
-                    <button type="reset" id="reset" class="btn btn-danger">Reset</button>
+                    <button type="reset" id="reset" class="btn btn-danger">Batal</button>
                     <input type="hidden" name="id" value="<?= $row['agenda_id'] ?>">
                     <button  class="btn btn-primary">Simpan</button>
                 </div>

@@ -82,7 +82,7 @@
 								
 		                    </div>
 		                    <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Batal</button>
+                                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Batal</button>
                                 <button  class="btn btn-primary waves-effect waves-light">Simpan</button>
                             </div>
 							</form>
@@ -231,7 +231,7 @@
 			</div>
 			<div class="modal-footer">
 				<input type="hidden" name="id" id="id">
-				<button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Batal</button>
+				<button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Batal</button>
 				<button  class="btn btn-primary waves-effect waves-light">Simpan</button>
 			</div>
 			</form>

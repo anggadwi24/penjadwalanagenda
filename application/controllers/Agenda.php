@@ -201,7 +201,7 @@ class Agenda extends CI_Controller
 						// $status = true;
 						if($row['agenda_status'] == 'ditolak'){
 						$data = array('agenda_name'=>$nama,'agenda_place'=>$tempat,'agenda_status'=>'undone','agenda_validasi'=>'n','agenda_validasi_by'=>NULL,'agenda_surat'=>$surat,'agenda_penyelenggara'=>$penyelenggara,'agenda_date_start'=>$dateStart,'agenda_date_end'=>$dateEnd,'agenda_penanggung_jawab'=>$pj,'agenda_perihal'=>$perihal,'agenda_kategori'=>$kategori);
-
+						$this->model_app->delete('validasi',array('valid_agenda_id'=>$id));
 						}else{
 						$data = array('agenda_name'=>$nama,'agenda_place'=>$tempat,'agenda_surat'=>$surat,'agenda_penyelenggara'=>$penyelenggara,'agenda_date_start'=>$dateStart,'agenda_date_end'=>$dateEnd,'agenda_penanggung_jawab'=>$pj,'agenda_perihal'=>$perihal,'agenda_kategori'=>$kategori);
 

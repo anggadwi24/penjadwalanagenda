@@ -32,13 +32,13 @@ $cekagenda = $this->db->query('select * from  agenda a JOIN agenda_pegawai b ON 
                 
                     <div class="col-12 table-responsive">
                         <h5>Selamat Datang <?= $user['pegawai_name'] ?></h5>
-                        <p>Berikut jadwal agenda milik anda</p><br>
+                        <p>Berikut jadwal agenda kegiatan milik anda</p><br>
                          <table id="datatable1" class="table dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                             <tr>
-                                <th>Agenda</th>
-                                <th>Tanggal</th>
-                                <th>Lokasi</th>
+                                <th>Agenda Kegiatan</th>
+                                <th>Tanggal Kegiatan</th>
+                                <th>Tempat Kegiatan</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -47,7 +47,7 @@ $cekagenda = $this->db->query('select * from  agenda a JOIN agenda_pegawai b ON 
                                 // $row = $this->model_app->view_where('agenda',array('agenda_id'=>$cgd['ap_agenda_id']))->row_array();
                                 ?>
                                 <tr>
-                                    <td><?= $row['agenda_name'] ?></td>
+                                    <td><a href='<?= base_url('agenda/detail?id='.$row['agenda_id']) ?>' ><?= $row['agenda_name'] ?></a></td>
                                     <td><?= date('d/m/Y H:i',strtotime($row['agenda_date_start'])) ?> s/d <?= date('d/m/Y H:i',strtotime($row['agenda_date_end'])) ?> WITA</td>
                                     <td><?= $row['agenda_place'] ?></td>
                                 </tr>
@@ -84,7 +84,7 @@ $cekagenda = $this->db->query('select * from  agenda a JOIN agenda_pegawai b ON 
                             
                                 <div class="col-10 text-left">
                                     <h5 class="mt-0 mb-1 textwhite"><?= $unvalid->num_rows() ?></h5>
-                                    <p class="mb-0 font-16 textwhite">Kegiatan belum divalidasi</p>   
+                                    <p class="mb-0 font-20 textwhite">Kegiatan belum divalidasi</p>   
                                 </div>
                                 <div class="col-2 textwhite text-center">
                                     <i class="fa fa-history" aria-hidden="true"></i>
@@ -94,7 +94,7 @@ $cekagenda = $this->db->query('select * from  agenda a JOIN agenda_pegawai b ON 
                         </div>
                     </div>
                     <div class="card-footer bg-light">
-                        <a href="<?= base_url('agenda?status=belum')?>">Info Lebih Lanjut <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?= base_url('agenda?status=belum')?>" class="font-16">Info Lebih Lanjut <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@ $cekagenda = $this->db->query('select * from  agenda a JOIN agenda_pegawai b ON 
                                 
                                 <div class="col-10 text-left ">
                                     <h5 class="mt-0 mb-1 textwhite"><?=$valid->num_rows() ?></h5>
-                                    <p class="mb-0 font-16 textwhite">Kegiatan sudah divalidasi</p>    
+                                    <p class="mb-0 font-20 textwhite">Kegiatan sudah divalidasi</p>    
                                 </div>
                                 <div class="col-2 textwhite text-center">
                                     <i class="fa fa-check" aria-hidden="true"></i>
@@ -116,7 +116,7 @@ $cekagenda = $this->db->query('select * from  agenda a JOIN agenda_pegawai b ON 
                     </div>
                     <div class="card-footer bg-light">
                  
-                        <a href="<?= base_url('agenda?status=sudah')?>">Info Lebih Lanjut <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?= base_url('agenda?status=sudah')?>" class="font-16">Info Lebih Lanjut <i class="fas fa-arrow-circle-right"></i></a>
                  
                     </div>
                 </div>
@@ -130,7 +130,7 @@ $cekagenda = $this->db->query('select * from  agenda a JOIN agenda_pegawai b ON 
                             
                                 <div class="col-10 text-left">
                                     <h5 class="mt-0 mb-1 textwhite"><?= $ditolak->num_rows() ?></h5>
-                                    <p class="mb-0 font-16 textwhite">Kegiatan ditolak </p>   
+                                    <p class="mb-0 font-20 textwhite">Kegiatan ditolak </p>   
                                 </div>
                                 <div class="col-2 textwhite text-center">
                                     <i class="fa fa-times" aria-hidden="true"></i>
@@ -140,7 +140,7 @@ $cekagenda = $this->db->query('select * from  agenda a JOIN agenda_pegawai b ON 
                         </div>
                     </div>
                     <div class="card-footer bg-light">
-                        <a href="<?= base_url('agenda?status=ditolak')?>">Info Lebih Lanjut <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?= base_url('agenda?status=ditolak')?>" class="font-16">Info Lebih Lanjut <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>  
@@ -157,7 +157,7 @@ $cekagenda = $this->db->query('select * from  agenda a JOIN agenda_pegawai b ON 
                                 
                                 <div class="col-10 text-left">
                                     <h5 class="mt-0 mb-1 textwhite"><?=$valid->num_rows() ?></h5>
-                                    <p class="mb-0 font-16 textwhite">Kegiatan sudah divalidasi</p>    
+                                    <p class="mb-0 font-20 textwhite">Kegiatan sudah divalidasi</p>    
                                 </div>
                                 <div class="col-2 textwhite">
                                     <i class="fa fa-check" aria-hidden="true"></i>
@@ -167,7 +167,7 @@ $cekagenda = $this->db->query('select * from  agenda a JOIN agenda_pegawai b ON 
                     </div>
                     <div class="card-footer bg-light">
                  
-                        <a href="<?= base_url('agenda')?>">Info Lebih Lanjut <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="<?= base_url('agenda')?>" class="font-16">Info Lebih Lanjut <i class="fas fa-arrow-circle-right"></i></a>
                  
                     </div>
                 </div>

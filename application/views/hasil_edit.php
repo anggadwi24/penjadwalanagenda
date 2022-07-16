@@ -83,7 +83,7 @@
                     </div>                                    
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="inputAddress">Staff yang Menghadiri</label>
+                            <label for="inputAddress">Peserta yang Menghadiri</label>
                             <select class="select2 mb-3 select2-multiple" style="width: 100%;" multiple="multiple" name="pegawai[]" data-placeholder="Choose" required disabled>
                                                 <?php 
                                                     if($pegawai->num_rows() > 0){

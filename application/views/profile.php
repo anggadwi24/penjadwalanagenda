@@ -1,3 +1,11 @@
+<style>
+	.field-icon {
+  right:30px;
+ top:40px;
+  position: absolute;
+  z-index: 99;
+} 
+ </style>
 <div class="row">
     <div class="col-sm-12">
         <div class="page-title-box">
@@ -72,7 +80,8 @@
                         </div>
                         <div class="col-12 form-group">
                             <label for="">Password</label>
-                            <input type="password" class="form-control" placeholder="Isi Jika Ingin Mengganti" name="password">
+                            <input type="password" class="form-control" id="password" placeholder="Isi Jika Ingin Mengganti" name="password">
+                            <span class="field-icon toggle" data-target = "#password" id="toggle"><i class="fas fa-eye"></i></span>
                         </div>
                         <div class="col-12 form-group">
                             <button class="btn btn-primary float-right">Simpan</button>
@@ -83,3 +92,19 @@
         </div>
     </div>
 </div>
+<script>
+            $(document).on('click','.toggle',function(){
+				var target = $(this).attr('data-target');
+                var pass = $(target).attr('type');
+                if(pass == 'password'){
+                    $(target).attr('type','text');
+                    $(this).html('<i class="fas fa-eye-slash"></i>');
+                }else{
+                    $(target).attr('type','password');
+                    $(this).html('<i class="fas fa-eye"></i>');
+
+
+                }
+                
+            })
+</script>

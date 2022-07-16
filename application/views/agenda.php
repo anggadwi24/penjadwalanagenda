@@ -64,7 +64,7 @@
                                     </div>                                    
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="inputAddress">Staff yang Menghadiri</label>
+                                            <label for="inputAddress">Peserta yang Menghadiri</label>
                                             <select class="select2 mb-3 select2-multiple" style="width: 100%;" multiple="multiple" name="pegawai[]" data-placeholder="Choose" required>
                                                 <?php 
                                                     if($staff->num_rows() > 0){
@@ -118,7 +118,7 @@
 <div class="row">
     <div class="col-12">
         <div class="card mt-2">
-            <div class="card-body pt-0">
+            <div class="card-body ">
                
                 <div class="row">
                     <div class="col-12 mb-3"> <button class="btn btn-primary waves-effect waves-light float-right mr-3" data-toggle="collapse" data-target="#filter" aria-expanded="false" aria-controls="filter"> <i class="fas fa-filter"></i> Filter</button>    </div>
@@ -179,6 +179,8 @@
                                             </select>
                                         </div>
                                         <div class="col-12 form-group text-right">
+                                             <button class="btn btn-danger" type="reset">RESET</button>
+
                                             <button class="btn btn-primary">CARI</button>
                                         </div>
                                     </div>

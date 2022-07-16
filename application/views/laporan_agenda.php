@@ -42,59 +42,59 @@
             </tr>
             <tr >
                 <td class="border">
-                    <label for="">Kode Kegiatan : </label>
-                    <h4><?= $row['agenda_code']?></h4>
+                    <h4 for="">Kode Kegiatan : </h4>
+                    <label><?= $row['agenda_code']?></label>
                 </td>
                 <td class="border">
-                    <label for="">Kategori Kegiatan : </label>
-                    <h4><?= ucfirst($row['agenda_kategori'])?></h4>
+                    <h4 for="">Kategori Kegiatan : </h4>
+                    <label><?= ucfirst($row['agenda_kategori'])?></label>
                 </td>
                 <td class="border">
-                    <label for="">Tgl Validasi : </label>
-                    <h4><?= date('d/m/Y',strtotime($valid['valid_date']))?></h4>
+                    <h4 for="">Tgl Validasi : </h4>
+                    <label><?= date('d/m/Y',strtotime($valid['valid_date']))?></label>
                 </td>
             </tr>
             <tr>
                 <td class="border" colspan="3">
-                    <label for="">Nama Kegiatan :</label>
-                    <h4><?=  $row['agenda_name']?></h4>
+                    <h4 for="">Nama Kegiatan :</h4>
+                    <label><?=  $row['agenda_name']?></label>
                 </td>
             </tr>
             <tr>
                 <td class="border" colspan="3">
-                    <label for="">Perihal Kegiatan :</label>
-                    <h4><?=  $row['agenda_perihal']?></h4>
+                    <h4 for="">Perihal Kegiatan :</h4>
+                    <label><?=  $row['agenda_perihal']?></label>
                 </td>
             </tr>
             <tr>
                 <td width="50%" class="border">
-                    <label for="">Tempat Kegiatan :</label>
-                    <h4><?= $row['agenda_place']?></h4>
+                    <h4 for="">Tempat Kegiatan :</h4>
+                    <label><?= $row['agenda_place']?></label>
                 </td>
                 <td width="25%" class="border">
-                    <label for="">Tgl Mulai :</label>
-                    <h4><?= date('d/m/Y H:i',strtotime($row['agenda_date_start']))?></h4>
+                    <h4 for="">Tgl Mulai :</h4>
+                    <label><?= date('d/m/Y H:i',strtotime($row['agenda_date_start']))?></label>
                 </td>
                 <td width="25%" class="border">
-                    <label for="">Tgl Selesai :</label>
-                    <h4><?= date('d/m/Y H:i',strtotime($row['agenda_date_end']))?></h4>
+                    <h4 for="">Tgl Selesai :</h4>
+                    <label><?= date('d/m/Y H:i',strtotime($row['agenda_date_end']))?></label>
                 </td>
 
             </tr>
             <tr>
                 <td width="50%" class="border">
-                    <label for="">Penyelenggara : </label>
-                    <h4><?= $row['agenda_penyelenggara']?></h4>
+                    <h4 for="">Penyelenggara : </h4>
+                    <label><?= $row['agenda_penyelenggara']?></label>
                 </td>
                 <td colspan="2" class="border">
-                    <label for="">Penanggung Jawab :</label>
-                    <h4><?= $pj['pegawai_name']?></h4>
+                    <h4 for="">Penanggung Jawab :</h4>
+                    <label><?= $pj['pegawai_name']?></label>
                 </td>
             </tr> 
             <tr>
                 <td colspan="3 " class="border">
-                    <label for="">Intruksi Camat</label>
-                    <h4><?= $valid['valid_intruksi']?></h4>
+                    <h4 for="">Intruksi Camat</h4>
+                    <label><?= $valid['valid_intruksi']?></label>
                 </td>
                 
             </tr>
@@ -103,8 +103,8 @@
             </tr>
             <tr >
                 <td colspan="3" class="border" >
-                    <label for="">Hasil/Notulen Kegiatan :</label>
-                    <h4><?= $hasil['hk_notulen']?></h4>
+                    <h4 for="">Hasil/Notulen Kegiatan :</h4>
+                    <label><?= $hasil['hk_notulen']?></label>
                 </td>
                 
             </tr>

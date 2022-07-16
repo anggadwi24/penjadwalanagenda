@@ -29,11 +29,15 @@
   position: absolute;
   z-index: 99;
 } 
+a:hover{
+    text-decoration: underline;
+}
 </style>
+
     <body class="fixed-left" >
 
         <div class="accountbg position-fixed"  style="overflow: hidden ;"></div>
-        <div class="wrapper-page position-fixed" style="max-width:30%;overflow:hidden;left:0;right:0">
+        <div class="wrapper-page position-fixed" style="max-width:30%;overflow:hidden;left:0;right:0;">
 
             <div class="card" style="border:none;border-radius:30px;overflow:hidden">
                 <div class="card-body">
@@ -87,7 +91,7 @@
                              -->
                             <div class="form-group  row m-t-20">
                                 <div class="col-4">
-                                    <a href="<?= base_url('forgot')?>">Lupa passowrd?</a>
+                                    <a href="<?= base_url('forgot')?>">Lupa password?</a>
                                 </div>
                                 <div class="col-8 ">
                                     <button class="btn btn-primary btn-block waves-effect waves-light float-right w-75" type="submit" style="border-radius:5px;">Sign In</button>

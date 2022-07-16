@@ -9,7 +9,14 @@
 		}
 	}
  ?>
- 
+ <style>
+	.field-icon {
+  right:15px;
+ top:40px;
+  position: absolute;
+  z-index: 99;
+} 
+ </style>
  <div class="row">
     <div class="col-sm-12">
         <div class="page-title-box">
@@ -55,13 +62,14 @@
 								    <div class="form-group col-md-6">
 								      <label for="inputPassword4">Password</label>
 								      <input type="password" class="form-control" id="inputPassword4" required name="password">
+									  <span class="field-icon toggle" data-target = "#inputPassword4" id="toggle"><i class="fas fa-eye"></i></span>
 								    </div>
 								  </div>
 								 
 								
 		                    </div>
 		                    <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Batal</button>
+                                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Batal</button>
                                 <button  class="btn btn-primary waves-effect waves-light">Simpan</button>
                             </div>
 							</form>
@@ -108,8 +116,6 @@
 											<button class='btn btn-outline-info waves-effect waves-light edit' data-id='".$row['users_id']."'><i class='fas fa-pencil-alt'></i></button>
 
 											
-											
-				
 											<button class='btn btn-outline-danger waves-effect waves-light delete' data-id='".$row['users_id']."'><i class='fas fa-trash'></i></button>
 											</td>
 
@@ -162,7 +168,8 @@
 						</div>
 						<div class="form-group col-md-6">
 							<label for="inputPassword4">Password</label>
-							<input type="password" class="form-control" id="inputPassword4" name="password">
+							<input class="form-control" type="password" id="password" required="" name="password" placeholder="Password">
+							<span class="field-icon toggle" data-target = "#password" id="toggle"><i class="fas fa-eye"></i></span>
 						</div>
 						</div>
 						
@@ -170,15 +177,31 @@
 				</div>
 				<div class="modal-footer">
 					<input type="hidden" id="id" name="id">
-					<button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Batal</button>
+					<button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Batal</button>
 					<button  class="btn btn-primary waves-effect waves-light">Simpan</button>
 				</div>
 				</form>
 		</div>
 	</div>
 </div>
-
 <script>
+            $(document).on('click','.toggle',function(){
+				var target = $(this).attr('data-target');
+                var pass = $(target).attr('type');
+                if(pass == 'password'){
+                    $(target).attr('type','text');
+                    $(this).html('<i class="fas fa-eye-slash"></i>');
+                }else{
+                    $(target).attr('type','password');
+                    $(this).html('<i class="fas fa-eye"></i>');
+
+
+                }
+                
+            })
+</script>
+<script>
+	
 	   $(document).on('submit','#formAct',function(e){
         
         e.preventDefault();

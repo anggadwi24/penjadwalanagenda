@@ -54,6 +54,7 @@
                                             </select>
                                         </div>
                                         <div class="col-12 form-group text-right">
+                                            <button class="btn btn-danger" type="reset">RESET</button>
                                             <button class="btn btn-primary">CARI</button>
                                         </div>
                                     </div>
